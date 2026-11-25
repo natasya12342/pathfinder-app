@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2563eb" />
+  <title>PathFinder — Asisten Rekomendasi Jurusan & Jalur Karier</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-badge">PF</span>
+        <div>
+          <h1>PathFinder</h1>
+          <p>Asisten Rekomendasi Jurusan & Jalur Karier</p>
+        </div>
+      </div>
+      <span class="pill">Mode Simulasi</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Pengantar -->
+    <section id="hero-section" class="card hero-card">
+      <h2>Temukan Jurusan & Jalur Karier yang Sesuai Minatmu</h2>
+      <p>
+        Jawab <strong>8 pertanyaan singkat</strong> berbasis skor minat & kemampuan
+        (<em>Logika & Sistem</em>, <em>Analisis Data</em>, <em>Komunikasi & Sosial</em>,
+        dan <em>Bisnis & Ekonomi</em>) untuk melihat rekomendasi jurusan, prospek karier,
+        serta <em>roadmap</em> langkah awal secara <em>real-time</em>.
+      </p>
+      <div class="sim-profile">
+        <label for="student-name">Nama / Inisial Simulasi (Opsional)</label>
+        <input
+          type="text"
+          id="student-name"
+          placeholder="Contoh: Siswa Simulasi A"
+          maxlength="40"
+        />
+      </div>
+      <button id="start-btn" class="btn btn-primary" type="button">
+        Mulai Kuis Sekarang
+      </button>
+    </section>
+
+    <!-- Area Kuis -->
+    <section id="quiz-section" class="card hidden" aria-live="polite">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="progress-text">Pertanyaan 1 dari 8</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-cluster" class="cluster-tag">Klaster</div>
+      <h3 id="question-text" class="question-text">Teks pertanyaan...</h3>
+
+      <div id="options-container" class="options-grid"></div>
+
+      <div id="validation-msg" class="alert hidden" role="alert">
+        Pilih salah satu jawaban terlebih dahulu sebelum melanjutkan.
+      </div>
+
+      <div class="quiz-actions">
+        <button id="prev-btn" class="btn btn-secondary" type="button">
+          Sebelumnya
+        </button>
+        <button id="next-btn" class="btn btn-primary" type="button">
+          Selanjutnya
+        </button>
+      </div>
+    </section>
+
+    <!-- Area Hasil -->
+    <section id="result-section" class="hidden">
+      <div class="card result-header">
+        <span class="pill">Hasil Analisis Real-Time</span>
+        <h2 id="result-greeting">Rekomendasi untuk Kamu</h2>
+        <p id="result-summary" class="muted"></p>
+        <div id="scores-breakdown" class="scores-list"></div>
+      </div>
+
+      <div id="recommendations-container" class="recs-grid"></div>
+
+      <div class="card roadmap-card">
+        <h3>Roadmap Langkah Awal (0–6 Bulan)</h3>
+        <ul id="roadmap-list" class="roadmap-list"></ul>
+      </div>
+
+      <div class="result-footer-actions">
+        <button id="retry-btn" class="btn btn-primary" type="button">
+          Ulangi Tes
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="container">
+      <p>
+        PathFinder • Proyek Edukasi Menggunakan Data Simulasi (Tanpa Data Pribadi / API Key).
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
